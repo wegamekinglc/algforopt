@@ -18,4 +18,4 @@ BenchmarkTools.DEFAULT_PARAMETERS.seconds = 10
 
 x = abs.(randn(10^6))
 
-t_vec = @benchmark vec(x)
+t_vec = @benchmark devec(x)
