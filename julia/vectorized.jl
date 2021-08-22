@@ -5,10 +5,10 @@ vec(x) = f(2x.^2 + 6x.^3 - sqrt.(x))
 newvec(x) = f.(2 .*x.^2 .+ 6 .* x.^3 .- sqrt.(x))
 
 function devec(x)
-    x_new = x[:]
+    x_new  = x[:]
     @simd for i in eachindex(x)
-        @inbounds x_bar = x[i]
-        x_new[i] = f(2x_bar^2 + 6x_bar^3 - sqrt(x_bar))
+        ϵ = x[i]
+        x_new[i] = f(ϵ^2 + ϵ^3 - sqrt(ϵ))
     end
     return x
 end
