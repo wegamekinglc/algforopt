@@ -114,4 +114,6 @@ def df(x):
 
 
 if __name__ == "__main__":
-    print(quadratic_fit_search(f, 0., 2., 5., 10))
+    from IPython import get_ipython
+    ipython = get_ipython()
+    ipython.magic("timeit quadratic_fit_search(f, 0., 2., 5., 10)")

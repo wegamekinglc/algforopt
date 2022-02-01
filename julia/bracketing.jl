@@ -132,10 +132,12 @@ f(x) = (x - 3.0) ^ 2
 df(x) = 2.0 * (x - 3.0)
 
 using BenchmarkTools
-BenchmarkTools.DEFAULT_PARAMETERS.seconds = 10
+BenchmarkTools.DEFAULT_PARAMETERS.seconds = 20
 
 @benchmark bracket_minmimum(f)
 
 a, b = bracket_minmimum(f)
 
 @benchmark fibonacci_search(f, a, b, 100)
+
+@benchmark quadratic_fit_search(f, 0.0, 2.0, 5.0, 10)
